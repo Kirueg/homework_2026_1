@@ -2,17 +2,14 @@
 
 /**
  * Функция, которая создает новый объект без ключей со значениями undefined, null и пустой строки
- * @param {Object} obj - Начальный объект
- *
+ * @param {Object} obj - Исходный объект
  *
  * @example
+ * // returns {b: "LOL"}
  * compressObject({a: null, b: "LOL", c: undefined})
- * results {b: "LOL"}
  *
- * @returns {Object} - Объект результат
- *
+ * @returns {Object} - Новый объект
  */
-
 const compressObject = (obj) => {
     const result = {};
 

@@ -45,4 +45,13 @@ QUnit.module("Тестируем функцию compressObject", function () {
 
         assert.deepEqual(result, { a: "null", b: "undefined" }, "Объект должен вернуть все ключи, так как тип значения отличается");
     });
+
+    QUnit.test("Проверка на значения 0 и false", function (assert) {
+        const result = compressObject({
+            a: 0,
+            b: false,
+        });
+
+        assert.deepEqual(result, { a: 0, b: false }, "Объект должен вернуть все ключи, так как они имеют тип int и boolean");
+    });
 });

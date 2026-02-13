@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Функция, которая создает новый объект без ключей со значениями undefined, null и пустой строки
@@ -11,13 +11,11 @@
  * @returns {Object} - Новый объект
  */
 const compressObject = (obj) => {
-    const result = {};
-
-    for (const [key, value] of Object.entries(obj)) {
+    return Object.entries(obj).reduce((result, [key, value]) => {
         if (value !== undefined && value !== null && value !== "") {
             result[key] = value;
         }
-    }
-
-    return result;
+        return result;
+    }, {});
 };
+
